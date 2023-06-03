@@ -1,0 +1,25 @@
+{
+"manifest_version": 3,
+    "name": "Bionic reading",
+    "description": "Convert text in website to be bionic reading",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js", "jquery.js"]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab",
+        "unlimitedStorage"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ]
+}
