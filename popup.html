@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
 
     <div id="container">
@@ -18,8 +16,148 @@
         </div>
     </div>
 
+    <style>
+        body {
+            background-color: #333333;
+            color: #ebf7fc;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        p {
+            margin-top: 0;
+            font-size: 1rem;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            background-color: #4c4c4c;
+            padding: .5rem;
+            border-radius: .5rem;
+        }
+        .image-row {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: .2rem;
+        }
+        img {
+            max-width: 100%;
+            border-radius: .3rem;
+        }
+        button {
+            border-radius: .5rem;
+            padding: .5rem;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+        button:hover {
+            border-radius: .4rem;
+        }
+        .delete {
+            background-color: #a81d1d;
+            color: #ebf7fc;
+        }
+        .delete:hover {
+            background-color: #ca1919;
+            transform: rotate(2deg);
+        }
+        #uploadForm {
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: .5rem;
+            padding-bottom: 0;
+            gap: 1rem;
+        }
+        .knobs,
+        .layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        .button {
+            position: relative;
+            width: 74px;
+            height: 36px;
+            overflow: hidden;
+        }
+        .button,
+        .button .layer {
+            border-radius: 100px;
+        }
+        .checkbox {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .knobs {
+            z-index: 2;
+        }
+        .layer {
+            width: 100%;
+            transition: 0.3s ease all;
+            z-index: 1;
+            background-color: #4d3d3d;
+        }
+        #toggle-switch .knobs:before,
+        #toggle-switch .knobs:after {
+            content: "ON";
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 20px;
+            height: 10px;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            padding: 9px 4px;
+            border-radius: 50%;
+            transition: 0.3s ease all;
+            background-color: #03a9f4;
+        }
+        #toggle-switch .knobs:before {
+            content: "OFF";
+            background-color: #f44336;
+        }
+        #toggle-switch .knobs:after {
+            content: "ON";
+        }
+        #toggle-switch .knobs:after {
+            right: -28px;
+            left: auto;
+        }
+        #toggle-switch .checkbox:checked+.knobs:before {
+            left: -28px;
+        }
+        #toggle-switch .checkbox:checked+.knobs:after {
+            right: 4px;
+        }
+        #toggle-switch .checkbox:checked~.layer {
+            background-color: #404352;
+        }
+    </style>
+
     <script src="popup.js"></script>
 
 </body>
-
 </html>

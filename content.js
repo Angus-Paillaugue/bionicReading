@@ -1,15 +1,9 @@
-const nodeStyle = "color:inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-weight: bold;";
-
 chrome.storage.local.get(["status"], function(status){
     if(status.status){
         const text = document.querySelectorAll("span, p, a, h1, h2, h3, h4, h5, h6, em, tr, ul, ol, tr, label");
 
         text.forEach(textNode => {
-            if(hasNonMutableAncestors(textNode)){
-                $(textNode).contents().each(function() {
-                    if(this.nodeType == Node.TEXT_NODE) $(this).replaceWith(generateFormattedText($(this).text()));
-                });
-            }
+            if(hasNonMutableAncestors(textNode))  $(textNode).contents().each(function() { if(this.nodeType == Node.TEXT_NODE) $(this).replaceWith(generateFormattedText($(this).text())); });
         });
     }
 });
