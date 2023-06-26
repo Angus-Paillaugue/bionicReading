@@ -1,5 +1,5 @@
 {
-"manifest_version": 3,
+    "manifest_version": 3,
     "name": "Bionic reading",
     "description": "Convert text in website to be bionic reading.",
     "version": "1.0",
