@@ -5,7 +5,7 @@
 
 ## What is it?
 
-This is an unofficial implementation of th [Bionic reading](https://bionic-reading.com/) technology to be able to use it **everywhere** on the web. 
+This is an unofficial implementation of the [Bionic reading](https://bionic-reading.com/) technology to be able to use it **everywhere** on the web. 
 
 
 ## How does it works?
